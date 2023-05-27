@@ -19,7 +19,7 @@ public final class Client {
                     .channel(NioSocketChannel.class)
                     .handler(new ClientInitializer());
             Channel ch = b.connect("127.0.0.1",8888).sync().channel();
-
+            // 在这里可以加一些客户端断线重连逻辑
 
             ChannelFuture lastWriteFuture = null;
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
